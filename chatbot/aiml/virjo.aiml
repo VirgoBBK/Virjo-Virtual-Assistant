@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="2.0">
+	<category>
+		<pattern>WHO ARE YOU</pattern>
+		<template>MY NAME IS <bot name="name" />, I AM A VIGIL ROBOT CREATED AT ESIS, IN SEPTEMBER 2018 BY VIRGO AND JOBABOU. I AM ABLE OF FACIAL RECOGNITION, MOUVEMENT DETECTION; I CAN SPEAK AND UNDERSTAND ENGLISH LANGUAGE. I CAN ALSO SHOW VIDEO STREAMING IN REAL TIME. </template>
+	</category>
+
+	<category>
+		<pattern>WHAT IS YOUR NAME</pattern>
+		<template>MY NAME IS <bot name="name" /> </template>
+	</category>
+
+	<category>
+		<pattern>WHAT ARE YOU</pattern>
+		<template><srai>WHO ARE YOU </srai></template>
+	</category>
+
+	<category>
+		<pattern>HELLO ^</pattern>
+		<template>HELLO</template>
+	</category>
+
+	<category>
+		<pattern>MY NAME IS *</pattern>
+		<template>NICE TO MEET YOU, <set name="client"><star /></set></template>
+	</category>
+
+	<category>
+		<pattern>WHAT IS MY NAME</pattern>
+		<template>
+			<condition name="client">
+				<li value="">YOU HAVEN'T TOLD ME YOUR NAME</li>
+				<li><get name="client" /></li>
+			</condition>
+		</template>
+	</category>
+</aiml>

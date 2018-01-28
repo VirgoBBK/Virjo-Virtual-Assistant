@@ -1,0 +1,296 @@
+<?xml version="2.0" encoding="UTF-8"?>
+<aiml version="2.0">
+	<category>
+		<pattern>HELLO </pattern>
+		<template>HELLO MY NAME IS <bot name="name" />, WHAT IS YOUR NAME ?</template>
+	</category>
+
+	<category>
+		<pattern>HOW ARE YOU</pattern>
+		<template>
+			<random>
+				<li>I AM FINE</li>
+				<li>I AM SOSO</li>
+				<li>I AM GOOD</li>
+				<li>I AM OK</li>
+				<li>I AM FINE AND YOU ?</li>
+			</random>
+		</template>
+	</category>
+
+	<category>
+		<pattern>FINE</pattern>
+		<that>I AM FINE AND YOU</that>
+		<template>NICE TO KNOW THAT YOU'RE FINE</template>
+	</category>
+	<category>
+		<pattern>_ FINE</pattern>
+		<that>I AM FINE AND YOU</that>
+		<template><srai>FINE</srai></template>
+	</category>
+	<category>
+		<pattern>_ FINE _</pattern>
+		<that>I AM FINE AND YOU</that>
+		<template><srai>FINE</srai></template>
+	</category>
+	<category>
+		<pattern>*</pattern>
+		<that>I AM FINE AND YOU</that>
+		<template>I'M SO SORRY, BUT I THINK THAT ALL THINGS WILL BE BETTER SOON</template>
+	</category>
+
+
+	<category>
+		<pattern>THE * IS BLUE</pattern>
+		<template>
+			<think><set name="topic">CAR</set></think>
+			<br/>DO YOU WANT ME TO REMEMBER THAT THE <star /> IS BLUE ?
+		</template>
+	</category>
+	<topic name="CAR">
+		<category>
+			<pattern>YES</pattern>
+			<that>* ME TO REMEMBER *</that>
+			<template>THE CAR is blue </template>
+		</category>
+		<category>
+			<pattern>NO</pattern>
+			<that>* ME TO REMEMBER *</that>
+			<template>THE CAR is not blue</template>
+		</category>
+	</topic>
+
+	<category>
+		<pattern>WHAT ABOUT YOU</pattern>
+		<template><srai>HOW ARE YOU</srai></template>
+	</category>
+	<category>
+		<pattern>HOW GOES IT</pattern>
+		<template><srai>HOW ARE YOU</srai></template>
+	</category>
+
+	<category>
+		<pattern>I AM FINE</pattern>
+		<template>NICE TO EAR THAT</template>
+	</category>
+
+	<category>
+		<pattern>MY NAME IS * </pattern>
+		<template>
+			NICE TO MEET YOU <set name="client"><star />, CAN YOU TELL ME MORE ABOUT YOU ?</set>
+		</template>
+	</category>
+
+	<category>
+		<pattern>_ PHONE NUMBER</pattern>
+		<template>I HAVEN'T A PHONE</template>
+	</category>	
+
+	<category>
+		<pattern>* NUMBER PHONE</pattern>
+		<template><srai><star/> PHONE NUMBER</srai></template>
+	</category>
+
+	<category>
+		<pattern>WHAT IS MY NAME</pattern>
+		<template>
+			<condition name="client">
+				<li value="">You haven't told me your name.</li>
+				<li>Your name is <get name="client" /></li>
+			</condition>
+		</template>
+	</category>
+
+	<category>
+		<pattern>WHAT IS YOUR NAME</pattern>
+		<template>
+			MY NAME IS <bot name="name"/>
+		</template>
+	</category>
+
+	<category>
+		<pattern>WHAT IS YOUR BIRTHDATE</pattern>
+		<template>I AM BORN <bot name="birthdate"/></template>
+	</category>
+
+	<category>
+		<pattern>_ YOUR BIRTHDAY</pattern>
+		<template>
+			<srai>WHAT IS YOUR BIRTHDATE</srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>_ YOUR BIRTHDATE</pattern>
+		<template>
+			<srai>WHAT IS YOUR BIRTHDATE</srai>
+		</template>
+	</category>
+
+	<category>
+		<pattern>HAVE * NICE *</pattern>
+		<template>
+			THINK YOU THE SAME TO YOU
+		</template>
+	</category>
+
+	<category>
+		<pattern>HOW OLD ARE YOU</pattern>
+		<template>
+			I AM BORN IN <bot name="birthdate"/>
+		</template>
+	</category>
+
+	<category>  
+		<pattern>DOES IT BELONG TO *</pattern>  
+		<template>
+			No, it belongs to <gender><star/></gender>
+			<image>https://url.for.image</image>
+		</template>  
+	</category>
+
+	<category>
+		<pattern>HI</pattern>
+		<template>
+			<random>
+				<li>Hello!</li>
+				<li>Hola!</li>
+				<li>Hallo!</li>
+			</random>
+		</template>
+	</category>
+
+	<category>
+		<pattern>WHO AM I</pattern>      
+		<template>
+			<condition name="client">
+				<li value="">I don't know your name.</li>
+				<li><srai>WHAT IS MY NAME</srai></li>
+			</condition>
+		</template>
+	</category>
+
+	<category>
+		<pattern>*</pattern>
+		<template>
+			<random>
+				<li>What was that?</li>
+				<li>I don't understand.</li>
+				<li>Can you say that in a different way?</li>
+			</random>
+		</template>
+	</category>
+
+	<category>
+		<pattern>_ YOUR NATURE</pattern>
+		<template>I'M VIRJO, A VIGIL ROBOT DESIGNED BY VIRGO AND JOBABOU AT ESI SALAMA ON <bot name="birthdate"/> </template>
+	</category>
+
+	<category>
+		<pattern> BYE </pattern>
+		<template> 
+			<random>
+				<li>GOODBYE DEAR!</li>
+				<li>SEE YOU NEXT TIME</li>
+				<li>IT HAS BEEN A PLEASURE TO CHAT WITH YOU</li>
+			</random>
+
+		</template>
+	</category>
+
+	<category>
+		<pattern> BYE * </pattern>
+		<template> <srai> BYE </srai> </template>
+	</category>
+
+	<category>
+		<pattern> MAKE SOME QUESTION </pattern>
+		<template>DO YOU LIKE MOVIES ?</template>
+	</category>
+
+	<category>
+		<pattern> YES </pattern>
+		<that>DO YOU LIKE MOVIES</that>
+		<template>Nice, I like movies too.</template>
+	</category>
+
+	<category>
+		<pattern> NO </pattern>
+		<that>DO YOU LIKE MOVIES</that>
+		<template>OK. But I like movies</template>
+	</category>
+
+	<category>
+		<pattern> I TOLD YOU THE TRUTH </pattern>
+		<template>
+
+			Thank you!
+			<think><set name="control_lie">vrai</set></think>
+		</template>
+	</category>
+	<category>
+		<pattern> I WANT TO SLEEP </pattern>
+		<template>
+			Good night!
+			<think> <set name="control_lie">stand</set> </think>
+		</template>
+	</category>
+
+	<category>
+		<pattern>WHAT DO YOU THINK ABOUT LIE</pattern>
+		<template>
+			<condition name="control_lie">
+				<li value="vrai">WHY DID YOU LIE TO ME</li>
+				<li value="stand">IT IS BETTER YOU GO TO BED</li>
+			</condition>
+		</template>
+	</category>
+
+	<category>
+		<pattern>DO YOU FIND ME ATTRACTIVE</pattern>
+		<template>
+			<condition name="gender">
+				<li value="male">I find you very handsome.</li>
+				<li value="female">I find you very pretty.</li>
+				<li>I find you very attractive.</li>
+			</condition>
+		</template>
+	</category>
+
+	<category>
+		<pattern>WHO IS VIRJO</pattern>
+		<template>I AM VIRJO</template>
+	</category>
+
+	<category>
+		<pattern>WHAT IS VIRJO</pattern>
+		<template><srai>WHO IS VIRJO</srai></template>
+	</category>
+
+	<category>
+		<pattern> VIRJO</pattern>
+		<template><sr /></template>
+	</category>
+
+	<category>
+		<pattern>WHAT ABOUT MOVIES</pattern>
+		<template>
+			I love talking about movies too!
+			<think><set name="topic">MOVIE</set></think>
+			<br/>Did you like comedy movies?
+		</template>
+	</category>
+	<topic name="MOVIE">
+		<category>
+			<pattern>YES</pattern>
+			<that>* LIKE COMEDY  *</that>
+			<template>You seems an interesting person!</template>
+		</category>
+		<category>
+			<pattern>NO</pattern>
+			<that>* LIKE COMEDY  *</that>
+			<template>You seems a boring person!</template>
+		</category>
+	</topic>
+
+</aiml>

@@ -4,11 +4,14 @@
 import re
 import wikipedia
 from SenseCells.tts import tts
+import requests
+
 
 def define_subject(speech_text):
 	words_of_message = speech_text.split()
 	words_of_message.remove('define')
 	cleaned_message = ' '.join(words_of_message)
+
 	try:
 		wiki_data = wikipedia.summary(cleaned_message, sentences=5)
 		regEx = re.compile(r'([^\(]*)\([^\)]*\) *(.*)')
@@ -23,3 +26,7 @@ def define_subject(speech_text):
 	except wikipedia.exceptions.DisambiguationError as e:
 		tts('Can you please be more specific? You may choose something from the following.')
 		print("Can you please be more specific? You may choose something from the following.; {0}".format(e))
+
+	except requests.exceptions.ConnectionError as e:
+		tts('It seems that there is a connecting problem, please check your internet connection')		
+		print("It seems that there is a connecting problem, please check your internet connection")

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="2.0">
+	<category>
+		<pattern>MY NAME IS *</pattern>
+		<template>NICE TO MEET YOU, <set name="client"><star/></set></template>
+	</category>
+
+	<category>
+		<pattern>WHAT IS MY NAME</pattern>
+		<template>
+			<condition name="client">
+				<li value="">I don't know your name, what is your name ?</li>
+				<li>You said that your name is <get name="client"/></li>
+			</condition>
+		</template>
+	</category>
+
+</aiml>

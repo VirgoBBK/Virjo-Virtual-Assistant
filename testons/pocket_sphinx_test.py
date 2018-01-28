@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/python
 # -*- coding:utf8 -*
 
 import gobject
@@ -30,7 +30,7 @@ class Speech_Recog(object):
 		#The following code create a gstreamer pipeline with pipeline description. The required descriptors needed for the code is given as parameters.
 		self.pipeline = gst.parse_launch('gconfaudiosrc ! audioconvert ! audioresample '
 		+ '! vader name=vad auto-threshold=true '
-		+ '! pocketsphinx name=asr ! fakesink')
+		+ '! pocketsphinx name=asr ! fakesink ')
 
 
 
