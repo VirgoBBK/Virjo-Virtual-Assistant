@@ -1,3 +1,6 @@
+#!/usr/bin/python
+# -*- coding:utf8 -*
+
 import sys
 import yaml
 import speech_recognition as sr
@@ -14,26 +17,27 @@ city_name = profile_data['city_name']
 city_code = profile_data['city_code']
 
 tts('Welcome ' + name + ', systems are now ready to run. How can I help you?')
+while True:
+	brain(name, raw_input("Say something > "), city_name, city_code)
 
+# def main():
+# 	r = sr.Recognizer()
+# 	with sr.Microphone() as source:
+# 		print("Say something!")
+# 		audio = r.listen(source)
 
-def main():
-	r = sr.Recognizer()
-	with sr.Microphone() as source:
-		print("Say something!")
-		audio = r.listen(source)
+# 	try:
+# 		speech_text = r.recognize_google(audio).lower().replace("'", "")
+# 		print("Melissa thinks you said '" + speech_text + "'")
 
-	try:
-		speech_text = r.recognize_google(audio).lower().replace("'", "")
-		print("Melissa thinks you said '" + speech_text + "'")
+# 		brain(name, speech_text, city_name, city_code)
 
-		brain(name, speech_text, city_name, city_code)
-
-	except sr.UnknownValueError:
-		print("Melissa could not understand audio")
+# 	except sr.UnknownValueError:
+# 		print("Melissa could not understand audio")
 		
-	except sr.RequestError as e:
-		print("Could not request results from Google Speech Recognition service; {0}".format(e))
+# 	except sr.RequestError as e:
+# 		print("Could not request results from Google Speech Recognition service; {0}".format(e))
 	
 	
 
-main()
+#main()

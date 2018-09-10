@@ -1,3 +1,6 @@
+#!/usr/bin/python
+# -*- coding:utf8 -*
+
 from GreyMatter import general_conversations, tell_time, weather, define_subject
 
 def brain(name, speech_text, city_name, city_code):

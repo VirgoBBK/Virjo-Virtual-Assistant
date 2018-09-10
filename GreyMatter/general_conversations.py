@@ -1,4 +1,8 @@
+#!/usr/bin/python
+# -*- coding:utf8 -*
+
 from SenseCells.tts import tts
+import random
 
 def who_are_you():
 	messages = ['I am Melissa, your lovely personal assistant.', 'Melissa, didnt I tell you before?', 'You ask that so many times! I am Melissa.']

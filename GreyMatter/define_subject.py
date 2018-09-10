@@ -1,5 +1,8 @@
+#!/usr/bin/python
+# -*-coding:utf8 -*
+
 import re
-#import wikipedia
+import wikipedia
 from SenseCells.tts import tts
 
 def define_subject(speech_text):

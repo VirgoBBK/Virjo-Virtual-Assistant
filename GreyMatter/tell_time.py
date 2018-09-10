@@ -1,3 +1,6 @@
+#!/usr/bin/python
+# -*- coding:utf8 -*
+
 from datetime import datetime
 from SenseCells.tts import tts
 
