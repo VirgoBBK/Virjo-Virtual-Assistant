@@ -14,7 +14,7 @@ import signal
 
 #Keyboard signal handling routine
 def signal_handle(signal, frame):
-	print "You pressed Ctrl+C"
+	print ("You pressed Ctrl+C")
 	sys.exit(0)
 
 
@@ -52,7 +52,7 @@ class Speech_Recog(object):
 		#Definition of asr_result
 	def asr_result(self, asr, text, uttid):
 		#Printing the detected text
-		print "Detected Text=>",text
+		print ("Detected Text=>",text)
 	
 
 	#This function will start/stop Speech recognition operation
@@ -88,3 +88,5 @@ if __name__ == "__main__":
 	while True:
 		#Calling Speech recognition routine
 		app_object.start_recognition()
+
+
