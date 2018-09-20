@@ -2,18 +2,17 @@
 # -*- coding:utf8 -*
 
 import os
-import sys
+from gtts import gTTS
+from espeak import espeak
 
-def tts(message):
-	"""
-	This function takes a message as an argument and converts it to speech
-	depending on the OS.
-	"""
+def tts_offline(message):
+	espeak.synth(message.encode('utf-8'))
 
-	if sys.platform == 'darwin':
-		tts_engine = 'say'
-		return os.system(tts_engine + ' ' + message)
-	elif sys.platform == 'linux2' or sys.platform == 'linux':
-		tts_engine = 'espeak'
+def tts_online(message):
+	try:
+	    tts = gTTS(text=message, lang='en')
+	    tts.save("audio.mp3")
+	    os.system("mpg321 audio.mp3")
 
-	os.system(tts_engine + ' "' + message.encode('utf-8') + '"')
+	except Exception as e:
+		tts_offline(message)

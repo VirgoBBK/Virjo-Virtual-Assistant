@@ -5,6 +5,7 @@ import aiml
 import sys
 from espeak import espeak as spk
 import os 
+from GreyMatter.SenseCells import tts
 
 # Change the current path to the desired
 os.chdir('./chatbot/aiml')
@@ -39,7 +40,8 @@ def speech_engine(input):
 	# if response == '':
 	# 	response = "I don't understant what you say !"
 	print response
-	response = 'espeak "{}"'.format(response)
-	os.system(response)
+	tts.tts_online(response)
+	# response = 'espeak "{}"'.format(response)
+	# os.system(response)
 
 	

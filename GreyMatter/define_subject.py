@@ -3,7 +3,7 @@
 
 import re
 import wikipedia
-from SenseCells.tts import tts
+from SenseCells.tts import tts_online, tts_offline
 import requests
 
 
@@ -21,12 +21,12 @@ def define_subject(speech_text):
 			m = regEx.match(wiki_data)
 
 		wiki_data = wiki_data.replace("'", "")
-		tts(wiki_data)
+		tts_online(wiki_data)
 
 	except wikipedia.exceptions.DisambiguationError as e:
-		tts('Can you please be more specific? You may choose something from the following.')
+		tts_online('Can you please be more specific? You may choose something from the following.')
 		print("Can you please be more specific? You may choose something from the following.; {0}".format(e))
 
 	except requests.exceptions.ConnectionError as e:
-		tts('It seems that there is a connecting problem, please check your internet connection')		
-		print("It seems that there is a connecting problem, please check your internet connection")
+		tts_offline('It seems that there is a connecting problem, please check your internet connection')		
+		print("It seems that there is a connecting problem, please check your internet connection.")

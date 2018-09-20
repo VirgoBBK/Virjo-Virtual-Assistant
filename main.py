@@ -4,7 +4,7 @@
 import sys
 import yaml
 import speech_recognition as sr
-from GreyMatter.SenseCells.tts import tts
+from GreyMatter.SenseCells.tts import tts_online
 from brain import brain
 
 profile = open('../../profile.yaml')
@@ -16,7 +16,7 @@ name = profile_data['name']
 city_name = profile_data['city_name']
 city_code = profile_data['city_code']
 
-tts('Welcome ' + name + ', systems are now ready to run. How can I help you?')
+tts_online('Welcome ' + name + ', systems are now ready to run. How can I help you?')
 while True:
 	brain(name, unicode(raw_input("Say something ici > ")), city_name, city_code)
 

@@ -39,12 +39,12 @@
 		<template>I'M SO SORRY, BUT I THINK THAT ALL THINGS WILL BE BETTER SOON</template>
 	</category>
 
-
+<!-- 
 	<category>
-		<pattern>THE * IS BLUE</pattern>
+		<pattern>THE * IS * </pattern>
 		<template>
 			<think><set name="topic">CAR</set></think>
-			<br/>DO YOU WANT ME TO REMEMBER THAT THE <star /> IS BLUE ?
+			<br/>DO YOU WANT ME TO REMEMBER THAT THE <star /> IS <star index="2"/> ?
 		</template>
 	</category>
 	<topic name="CAR">
@@ -58,7 +58,7 @@
 			<that>* ME TO REMEMBER *</that>
 			<template>THE CAR is not blue</template>
 		</category>
-	</topic>
+	</topic> -->
 
 	<category>
 		<pattern>WHAT ABOUT YOU</pattern>
@@ -114,14 +114,14 @@
 	</category>
 
 	<category>
-		<pattern>_ YOUR BIRTHDAY</pattern>
+		<pattern>* YOUR BIRTHDAY</pattern>
 		<template>
 			<srai>WHAT IS YOUR BIRTHDATE</srai>
 		</template>
 	</category>
 
 	<category>
-		<pattern>_ YOUR BIRTHDATE</pattern>
+		<pattern>* YOUR BIRTHDATE</pattern>
 		<template>
 			<srai>WHAT IS YOUR BIRTHDATE</srai>
 		</template>
@@ -130,7 +130,14 @@
 	<category>
 		<pattern>HAVE * NICE *</pattern>
 		<template>
-			THINK YOU THE SAME TO YOU
+			THANK YOU THE SAME TO YOU
+		</template>
+	</category>
+
+	<category>
+		<pattern>THANK YOU</pattern>
+		<template>
+			YOU'RE WELCOME
 		</template>
 	</category>
 
@@ -157,6 +164,12 @@
 				<li>Hola!</li>
 				<li>Hallo!</li>
 			</random>
+		</template>
+	</category>	
+	<category>
+		<pattern>HALLO</pattern>
+		<template>
+			
 		</template>
 	</category>
 
